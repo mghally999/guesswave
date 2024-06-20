@@ -15,8 +15,8 @@ interface ResultItem {
   score: number;
 }
 
-const generatePositiveGradientData = (target: number) => {
-  const data = [];
+const generatePositiveGradientData = (target: number): { value: number }[] => {
+  const data: { value: number }[] = [];
   let value = 0;
   const steps = 5;
   const totalIncrement = target / ((steps * (steps + 1)) / 2);
@@ -37,7 +37,7 @@ const generatePositiveGradientData = (target: number) => {
   return data;
 };
 
-const Game = () => {
+const Game: React.FC = () => {
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [username, setUsername] = useState("");
   const [points, setPoints] = useState(100);
