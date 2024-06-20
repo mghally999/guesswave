@@ -4,41 +4,29 @@ import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/components/MultiplierControl.module.scss";
 
 interface MultiplierControlProps {
-  multiplier: number;
-  setMultiplier: (multiplier: number) => void;
+  multiplier: any;
+  setMultiplier: (multiplier: any) => void;
 }
 
 const MultiplierControl: React.FC<MultiplierControlProps> = ({
   multiplier,
   setMultiplier,
 }) => {
-  const handleDecrement = () => {
-    setMultiplier((prev: number) => prev - 0.25);
-  };
-
-  const handleIncrement = () => {
-    setMultiplier((prev: number) => prev + 0.25);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setMultiplier(parseFloat(e.target.value));
-  };
-
   return (
     <div className={styles.control}>
       <span>Multiplier</span>
       <div className={styles.controlInner}>
-        <button onClick={handleDecrement}>
+        <button onClick={() => setMultiplier((prev) => prev - 0.25)}>
           <FontAwesomeIcon icon={faArrowDown} />
         </button>
         <input
           type="number"
           value={multiplier}
           step="0.01"
-          onChange={handleChange}
+          onChange={(e) => setMultiplier(parseFloat(e.target.value))}
           className={styles.input}
         />
-        <button onClick={handleIncrement}>
+        <button onClick={() => setMultiplier((prev) => prev + 0.25)}>
           <FontAwesomeIcon icon={faArrowUp} />
         </button>
       </div>
