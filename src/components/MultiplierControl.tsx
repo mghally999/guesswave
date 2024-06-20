@@ -5,7 +5,7 @@ import styles from "../styles/components/MultiplierControl.module.scss";
 
 interface MultiplierControlProps {
   multiplier: number;
-  setMultiplier: (multiplier: number) => void;
+  setMultiplier: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const MultiplierControl: React.FC<MultiplierControlProps> = ({ multiplier, setMultiplier }) => {
@@ -13,17 +13,22 @@ const MultiplierControl: React.FC<MultiplierControlProps> = ({ multiplier, setMu
     <div className={styles.control}>
       <span>Multiplier</span>
       <div className={styles.controlInner}>
-        <button onClick={() => setMultiplier((prev) => prev - 0.25)}>
+        <button 
+        title="down"
+        onClick={() => setMultiplier(prev => prev - 0.25)}>
           <FontAwesomeIcon icon={faArrowDown} />
         </button>
         <input
+          placeholder="1x"
           type="number"
           value={multiplier}
           step="0.01"
           onChange={(e) => setMultiplier(parseFloat(e.target.value))}
           className={styles.input}
         />
-        <button onClick={() => setMultiplier((prev) => prev + 0.25)}>
+        <button 
+        title="up"
+         onClick={() => setMultiplier(prev => prev + 0.25)}>
           <FontAwesomeIcon icon={faArrowUp} />
         </button>
       </div>
