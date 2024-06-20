@@ -3,20 +3,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/components/PointsControl.module.scss";
 
-const PointsControl = ({ points, setPoints, userPoints }) => {
+interface PointsControlProps {
+  points: number;
+  setPoints: React.Dispatch<React.SetStateAction<number>>;
+  userPoints: number;
+}
+
+const PointsControl: React.FC<PointsControlProps> = ({ points, setPoints, userPoints }) => {
   return (
     <div className={styles.control}>
       <span>Points</span>
       <div className={styles.controlInner}>
-        <button onClick={() => setPoints((prev) => prev - 25)}>
+        <button 
+        title="down"
+        onClick={() => setPoints((prev) => prev - 25)}>
           <FontAwesomeIcon icon={faArrowDown} />
         </button>
         <input
+          placeholder="point"
           max={userPoints}
           value={points}
           onChange={(e) => setPoints(parseInt(e.target.value))}
         />
-        <button onClick={() => setPoints((prev) => prev + 25)}>
+        <button 
+        title="up"
+        onClick={() => setPoints((prev) => prev + 25)}>
           <FontAwesomeIcon icon={faArrowUp} />
         </button>
       </div>

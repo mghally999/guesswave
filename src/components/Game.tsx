@@ -6,10 +6,20 @@ import MultiplierControl from "./MultiplierControl";
 import CurrentRound from "./CurrentRound";
 import SpeedControl from "./SpeedControl";
 import MultiplierChart from "./MultiplierChart";
-import currentRound from "./CurrentRound";
 import UserInfo from "./UserInfo";
 import Chat from "./Chat";
 import Ranking from "./Ranking";
+
+interface RoundResult {
+  username: string;
+  points: number;
+  multiplier: number;
+}
+
+interface Result {
+  username: string;
+  score: number;
+}
 
 const generatePositiveGradientData = (target: number) => {
   const data = [];
@@ -44,28 +54,24 @@ const Game = () => {
   const [revealCurrentRoundResult, setRevealCurrentRoundResult] = useState(false);
   const [buttonState, setButtonState] = useState({ text: "Start", disabled: false });
   const [data, setData] = useState(generatePositiveGradientData(9));
-  const [records, setRecords] = useState([]);
-  const [allResults, setAllResults] = useState([]);
-  const [currentRound, setCurrentRound] = useState(
-    [
+  const [records, setRecords] = useState<Result[]>([]);
+  const [allResults, setAllResults] = useState<Result[]>([]);
+  const [currentRound, setCurrentRound] = useState<RoundResult[]>([
+    { username: username, points: points, multiplier: multiplier },
+    { username: "cpu0", points: 0, multiplier: 1 },
+    { username: "cpu1", points: 0, multiplier: 1 },
+    { username: "cpu2", points: 0, multiplier: 1 },
+    { username: "cpu3", points: 0, multiplier: 1 },
+  ]);
+
+  const handleNameSubmit = (username: string) => {
+    setCurrentRound([
       { username: username, points: points, multiplier: multiplier },
       { username: "cpu0", points: 0, multiplier: 1 },
       { username: "cpu1", points: 0, multiplier: 1 },
       { username: "cpu2", points: 0, multiplier: 1 },
       { username: "cpu3", points: 0, multiplier: 1 },
-    ]
-  )
-
-  const handleNameSubmit = (username: string) => {
-    setCurrentRound(
-      [
-        { username: username, points: points, multiplier: multiplier },
-        { username: "cpu0", points: 0, multiplier: 1 },
-        { username: "cpu1", points: 0, multiplier: 1 },
-        { username: "cpu2", points: 0, multiplier: 1 },
-        { username: "cpu3", points: 0, multiplier: 1 },
-      ]
-    )
+    ]);
     setUsername(username);
   };
 
@@ -77,46 +83,47 @@ const Game = () => {
     setTriggerAnimation(false);
   };
 
-  const revealResult =  () => {
+  const revealResult = () => {
     setRevealCurrentRoundResult(true);
-  }
+  };
 
   const handleStartClick = () => {
-    setUserPoints(userPoints-points);
-    const result_new = (Math.floor(Math.random() * 90)) / 10 + 1;
+    setUserPoints(userPoints - points);
+    const result_new = Math.floor(Math.random() * 90) / 10 + 1;
     setResult(result_new);
     setData(generatePositiveGradientData(result_new));
     setTriggerAnimation(true);
     setButtonState({ text: "Started", disabled: true });
     setTimeout(reEnableStartButton, 2000);
     setTimeout(disableGraph, 20000 / speed);
-    
-    const roundResults = [
+
+    const roundResults: RoundResult[] = [
       { username: username, points: points, multiplier: multiplier },
-      { username: "cpu0", points: Math.floor(Math.random() * 24 + 1) * 25, multiplier: (Math.floor(Math.random() * 100)) / 10 },
-      { username: "cpu1", points: Math.floor(Math.random() * 24 + 1) * 25, multiplier: (Math.floor(Math.random() * 100)) / 10 },
-      { username: "cpu2", points: Math.floor(Math.random() * 24 + 1) * 25, multiplier: (Math.floor(Math.random() * 100)) / 10 },
-      { username: "cpu3", points: Math.floor(Math.random() * 24 + 1) * 25, multiplier: (Math.floor(Math.random() * 100)) / 10 }
+      { username: "cpu0", points: Math.floor(Math.random() * 24 + 1) * 25, multiplier: Math.floor(Math.random() * 100) / 10 },
+      { username: "cpu1", points: Math.floor(Math.random() * 24 + 1) * 25, multiplier: Math.floor(Math.random() * 100) / 10 },
+      { username: "cpu2", points: Math.floor(Math.random() * 24 + 1) * 25, multiplier: Math.floor(Math.random() * 100) / 10 },
+      { username: "cpu3", points: Math.floor(Math.random() * 24 + 1) * 25, multiplier: Math.floor(Math.random() * 100) / 10 },
     ];
+
     setRevealCurrentRoundResult(false);
-    
+
     setTimeout(() => {
       revealResult();
       setCurrentRound(roundResults);
-    },  12000 / speed);
-    
+    }, 12000 / speed);
+
     if (result_new > multiplier) { // won
-      setUserPoints(userPoints + (points * multiplier));
+      setUserPoints(userPoints + points * multiplier);
     }
-    
-    const newResults = roundResults.map(result => ({
+
+    const newResults: Result[] = roundResults.map(result => ({
       username: result.username,
-      score: Math.floor(result.points * result.multiplier)
+      score: Math.floor(result.points * result.multiplier),
     }));
-    
+
     const validResults = newResults.filter(result => result.score > 0);
-    
-    const uniqueResults = [...allResults, ...validResults].reduce((acc, current) => {
+
+    const uniqueResults = [...allResults, ...validResults].reduce<Result[]>((acc, current) => {
       const x = acc.find(item => item.username === current.username);
       if (!x) {
         return acc.concat([current]);
@@ -124,12 +131,11 @@ const Game = () => {
         return acc;
       }
     }, []);
-    
+
     const topResults = uniqueResults.sort((a, b) => b.score - a.score).slice(0, 5);
-    
+
     setAllResults(uniqueResults);
     setRecords(topResults);
-    
   };
 
   return (
@@ -137,12 +143,12 @@ const Game = () => {
       <div className={styles.topPane}>
         <div className={styles.topPaneLeft}>
           {!username && (
-              <Welcome handleNameSubmit={handleNameSubmit} />
+            <Welcome handleNameSubmit={handleNameSubmit} />
           )}
           {username && (
             <center>
               <div className={styles.row}>
-                <PointsControl points={points} setPoints={setPoints} userPoints={userPoints}/>
+                <PointsControl points={points} setPoints={setPoints} userPoints={userPoints} />
                 <MultiplierControl multiplier={multiplier} setMultiplier={setMultiplier} />
               </div>
               <div>
