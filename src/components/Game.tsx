@@ -10,6 +10,11 @@ import UserInfo from "./UserInfo";
 import Chat from "./Chat";
 import Ranking from "./Ranking";
 
+interface ResultItem {
+  username: string;
+  score: number;
+}
+
 const generatePositiveGradientData = (target: number) => {
   const data = [];
   let value = 0;
@@ -47,8 +52,8 @@ const Game = () => {
     disabled: false,
   });
   const [data, setData] = useState(generatePositiveGradientData(9));
-  const [records, setRecords] = useState([]);
-  const [allResults, setAllResults] = useState([]);
+  const [records, setRecords] = useState<ResultItem[]>([]);
+  const [allResults, setAllResults] = useState<ResultItem[]>([]);
   const [currentRound, setCurrentRound] = useState([
     { username: username, points: points, multiplier: multiplier },
     { username: "cpu0", points: 0, multiplier: 1 },
@@ -125,14 +130,14 @@ const Game = () => {
       setUserPoints(userPoints + points * multiplier);
     }
 
-    const newResults = roundResults.map((result) => ({
+    const newResults: ResultItem[] = roundResults.map((result) => ({
       username: result.username,
       score: Math.floor(result.points * result.multiplier),
     }));
 
     const validResults = newResults.filter((result) => result.score > 0);
 
-    const uniqueResults = [...allResults, ...validResults].reduce(
+    const uniqueResults = [...allResults, ...validResults].reduce<ResultItem[]>(
       (acc, current) => {
         const x = acc.find((item) => item.username === current.username);
         if (!x) {
