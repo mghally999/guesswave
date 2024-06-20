@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/components/Ranking.module.scss";
+import styles from "./Ranking.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartSimple } from "@fortawesome/free-solid-svg-icons";
 

@@ -5,7 +5,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <title>Guess Wave</title>
-      <div className={styles.content}>{children}</div>
+      {children}
     </>
   );
 };

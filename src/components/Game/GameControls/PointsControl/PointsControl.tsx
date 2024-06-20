@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import styles from "../styles/components/PointsControl.module.scss";
+import styles from "./PointsControl.module.scss";
 
 const PointsControl = ({ points, setPoints, userPoints }) => {
   return (

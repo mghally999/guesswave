@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import styles from "../styles/components/MultiplierControl.module.scss";
+import styles from "./MultiplierControl.module.scss";
 
 interface MultiplierControlProps {
   multiplier: any;

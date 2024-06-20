@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/components/SpeedControl.module.scss";
+import styles from "./SpeedControl.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTachometerAlt } from "@fortawesome/free-solid-svg-icons";
 
@@ -29,7 +29,8 @@ const SpeedControl: React.FC<SpeedControlProps> = ({ speed, setSpeed }) => {
           onChange={handleSpeedChange}
           className={styles.rangeSlider}
           style={{
-            background: "linear-gradient(90deg, rgba(227,57,125,1) 35%, rgba(252,95,70,1) 100%)"
+            background:
+              "linear-gradient(90deg, rgba(227,57,125,1) 35%, rgba(252,95,70,1) 100%)",
           }}
         />
         <div className={styles.labels}>

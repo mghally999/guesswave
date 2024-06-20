@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
   LineChart,
   Line,
@@ -6,8 +6,8 @@ import {
   YAxis,
   ResponsiveContainer,
   Dot,
-} from 'recharts';
-import styles from "../styles/components/MultiplierChart.module.scss";
+} from "recharts";
+import styles from "./MultiplierChart.module.scss";
 
 interface DataPoint {
   value: number;
@@ -28,7 +28,7 @@ const MultiplierChart: React.FC<MultiplierChartProps> = ({
 
   useEffect(() => {
     if (triggerAnimation) {
-      const maxValue = Math.max(...data.map(item => item.value));
+      const maxValue = Math.max(...data.map((item) => item.value));
       setMaxDataValue(maxValue);
     } else {
       setMaxDataValue(0);
@@ -45,7 +45,11 @@ const MultiplierChart: React.FC<MultiplierChartProps> = ({
 
   if (!triggerAnimation) {
     return (
-      <ResponsiveContainer className={styles.chartContainer} width="100%" height={400}>
+      <ResponsiveContainer
+        className={styles.chartContainer}
+        width="100%"
+        height={400}
+      >
         <LineChart data={[]}>
           <XAxis domain={[0, 10]} />
           <YAxis domain={[0, 10]} hide={true} />
@@ -55,7 +59,11 @@ const MultiplierChart: React.FC<MultiplierChartProps> = ({
   }
 
   return (
-    <ResponsiveContainer className={styles.chartContainer} width="100%" height={400}>
+    <ResponsiveContainer
+      className={styles.chartContainer}
+      width="100%"
+      height={400}
+    >
       <LineChart
         data={data}
         margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
@@ -81,7 +89,7 @@ const MultiplierChart: React.FC<MultiplierChartProps> = ({
           y="50%"
           textAnchor="middle"
           dominantBaseline="middle"
-          style={{ fontSize: '4rem', fontWeight: 'bold', fill: '#fff' }}
+          style={{ fontSize: "4rem", fontWeight: "bold", fill: "#fff" }}
         >
           {maxDataValue}x
         </text>

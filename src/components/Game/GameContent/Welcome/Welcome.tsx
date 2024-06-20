@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../styles/components/Welcome.module.scss";
+import styles from "./Welcome.module.scss";
 
 interface WelcomeProps {
   handleNameSubmit: (username: string) => void;
@@ -14,7 +14,7 @@ const Welcome: React.FC<WelcomeProps> = ({ handleNameSubmit }) => {
   };
 
   return (
-    <div className={styles.welcomeContainer}>
+    <>
       <form className={styles.welcomeCard} onSubmit={handleAccept}>
         <h1>Welcome</h1>
         <p>Please Enter Your Name</p>
@@ -26,7 +26,7 @@ const Welcome: React.FC<WelcomeProps> = ({ handleNameSubmit }) => {
         />
         <button type="submit">Accept</button>
       </form>
-    </div>
+    </>
   );
 };
 

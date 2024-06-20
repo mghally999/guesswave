@@ -1,4 +1,4 @@
-@import "../variables";
+@import "../../../../styles/variables.scss";
 
 .header {
   display: flex;
@@ -19,22 +19,22 @@
 }
 
 .chat {
-  padding:0  1rem;
-  margin-bottom: 30px;
-  margin: 0 1rem;
+  /* padding: 0 1rem; */
+  /* margin-bottom: 30px; */
+  /* margin: 0 1rem; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 45vw;
-  height: 320px;
-  border-radius: 10px;
+  /* justify-content: space-between; */
+  /* width: 45vw; */
+  /* height: 320px; */
+  border-radius: 9px;
 
   .chatHistory {
     border-radius: 20px 0 !important;
     background: $inputDiv;
     flex-grow: 1;
-    overflow-y:scroll;
-    div{
+    overflow-y: scroll;
+    div {
       display: flex;
       flex-direction: row;
     }
@@ -59,7 +59,7 @@
     border-radius: 0 20px !important;
     display: flex;
     background-color: #313945;
-    padding:20px;
+    padding: 20px;
     gap: 10px;
 
     form {
@@ -78,7 +78,11 @@
 
     .sendButton {
       padding: 1rem 3rem;
-      background: linear-gradient(90deg, rgba(227,57,125,1) 35%, rgba(252,95,70,1) 100%);
+      background: linear-gradient(
+        90deg,
+        rgba(227, 57, 125, 1) 35%,
+        rgba(252, 95, 70, 1) 100%
+      );
       color: $text-color;
       font-weight: 400;
       font-size: large;

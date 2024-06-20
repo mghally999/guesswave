@@ -1,0 +1,72 @@
+@import "../../../styles/variables.scss";
+
+// .game {
+//   color: $text-color;
+// }
+
+.row {
+  display: flex;
+}
+
+.start_button {
+  background: linear-gradient(
+    90deg,
+    rgba(227, 57, 125, 1) 35%,
+    rgba(252, 95, 70, 1) 100%
+  );
+  color: $text-color;
+  font-weight: 500;
+  font-size: 18px;
+  width: 100%;
+  padding: 20px;
+  font-size: large;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+
+  &:disabled {
+    background-color: #cccccc !important;
+    cursor: not-allowed;
+  }
+}
+
+.topPane {
+  // display: grid;
+  // width: 100vw;
+  // grid-template-columns: 1fr 2fr;
+  // gap: 20px;
+
+  display: grid;
+  grid-template-columns: 0.7fr 1.5fr;
+  align-items: center;
+  gap: 9.6rem;
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+// .topPaneLeft {
+//   color: $text-color;
+// }
+
+// .topPaneRight {
+//   margin-right: 20px;
+//   color: $text-color;
+// }
+
+.bottomPane {
+  // // margin-left: 20px;
+  // display: flex;
+  // // justify-content: space-between;
+  // // margin-top: auto;
+  // width: 100%;
+  // color: $text-color;
+
+  display: grid;
+  grid-template-columns: 0.7fr 1.5fr;
+  align-items: center;
+  gap: 9.6rem;
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
