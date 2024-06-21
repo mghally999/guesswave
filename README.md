@@ -17,12 +17,13 @@ Guess Wave is an engaging and dynamic guessing game where players predict the po
 </p>
 
 <!-- Screenshot -->
-<div align="center">
+<a align="center" href="https://guesswave.netlify.app">
+
 ![Screenshot](./public/thumbnail-preview-1.png)
 
 ![Screenshot](./public/thumbnail-preview-2.png)
 
-</div>
+</a>
 
 Table of contents
 
