@@ -1,19 +1,14 @@
 <div align="center">
-
   <h2>Guess Wave</h2>
-
   <h3>
     <a href="https://guesswave.netlify.app" target="_blank">
       <strong>Demo Website</strong>
     </a>
   </h3>
-
   <div align="center">
     <a href="https://guesswave.netlify.app" target="_blank">View Demo</a>
   </div>
-
   <hr>
-
 </div>
 
 <!-- Brief -->
@@ -22,13 +17,12 @@ Guess Wave is an engaging and dynamic guessing game where players predict the po
 </p>
 
 <!-- Screenshot -->
-<a align="center" href="https://guesswave.netlify.app">
-
+<div align="center">
 ![Screenshot](./public/thumbnail-preview-1.png)
 
 ![Screenshot](./public/thumbnail-preview-2.png)
 
-</a>
+</div>
 
 Table of contents
 
