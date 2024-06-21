@@ -1,8 +1,16 @@
 @import "../../../styles/variables.scss";
 
-// .game {
-//   color: $text-color;
-// }
+.container {
+  padding: 19px 100px;
+  height: 100vh;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 0.7fr 1.5fr;
+  align-items: center;
+  gap: 1rem;
+}
 
 .row {
   display: flex;
@@ -47,43 +55,6 @@
   }
 }
 
-.topPane {
-  // display: grid;
-  // width: 100vw;
-  // grid-template-columns: 1fr 2fr;
-  // gap: 20px;
-
-  display: grid;
-  grid-template-columns: 0.7fr 1.5fr;
-  align-items: center;
-  gap: 9.6rem;
-  max-width: 130rem;
-  margin: 0 auto;
-  padding: 0 3.2rem;
-}
-
-// .topPaneLeft {
-//   color: $text-color;
-// }
-
-// .topPaneRight {
-//   margin-right: 20px;
-//   color: $text-color;
-// }
-
-.bottomPane {
-  // // margin-left: 20px;
-  // display: flex;
-  // // justify-content: space-between;
-  // // margin-top: auto;
-  // width: 100%;
-  // color: $text-color;
-
-  display: grid;
-  grid-template-columns: 0.7fr 1.5fr;
-  align-items: center;
-  gap: 9.6rem;
-  max-width: 130rem;
-  margin: 0 auto;
-  padding: 0 3.2rem;
+.topPaneRight {
+  // Styles for the topPaneRight if needed
 }

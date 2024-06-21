@@ -7,7 +7,6 @@ import MultiplierControl from "./GameControls/MultiplierControl/MultiplierContro
 import CurrentRound from "./WelcomeRound/CurrentRound/CurrentRound";
 import SpeedControl from "./GameControls/SpeedControl/SpeedControl";
 import MultiplierChart from "./MultiplierChart/MultiplierChart";
-// import UserInfo from "../../UerInfos";
 import Chat from "./Chat/Chat";
 import Ranking from "./Ranking/Ranking";
 import useGame from "../../../hooks/useGame";
@@ -17,7 +16,6 @@ const GameContainer = () => {
   const {
     triggerAnimation,
     username,
-    setUsername,
     points,
     setPoints,
     userPoints,
@@ -37,8 +35,8 @@ const GameContainer = () => {
   } = useGame();
 
   return (
-    <>
-      <div className={styles.topPane}>
+    <div className={styles.container}>
+      <div className={styles.gridContainer}>
         {!username && <Welcome handleNameSubmit={handleNameSubmit} />}
         {username && (
           <center>
@@ -84,11 +82,12 @@ const GameContainer = () => {
           />
         </div>
       </div>
-      <div className={styles.bottomPane}>
+
+      <div className={styles.gridContainer}>
         <Ranking username={username} records={records} />
         <Chat username={username} />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -26,10 +26,10 @@
   justify-content: space-between;
   // width: 45vw;
   height: 320px;
-  border-radius: 10px;
+  // border-radius: 10px;
 
   .chatHistory {
-    border-radius: 20px 0 !important;
+    // border-radius: 20px 0 !important;
     background: $inputDiv;
     flex-grow: 1;
     overflow-y: scroll;
@@ -55,7 +55,7 @@
   }
 
   .inputContainer {
-    border-radius: 0 20px !important;
+    // border-radius: 0 20px !important;
     display: flex;
     background-color: #313945;
     padding: 20px;
