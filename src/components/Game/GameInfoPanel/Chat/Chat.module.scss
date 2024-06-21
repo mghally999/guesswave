@@ -1,5 +1,4 @@
 @import "../../../../styles/variables.scss";
-
 .header {
   display: flex;
   align-items: center;
@@ -19,15 +18,15 @@
 }
 
 .chat {
-  /* padding: 0 1rem; */
-  /* margin-bottom: 30px; */
-  /* margin: 0 1rem; */
+  padding: 0 1rem;
+  margin-bottom: 30px;
+  margin: 0 1rem;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  /* width: 45vw; */
-  /* height: 320px; */
-  border-radius: 9px;
+  justify-content: space-between;
+  // width: 45vw;
+  height: 320px;
+  border-radius: 10px;
 
   .chatHistory {
     border-radius: 20px 0 !important;
