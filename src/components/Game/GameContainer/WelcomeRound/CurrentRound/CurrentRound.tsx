@@ -50,8 +50,8 @@ const CurrentRound = ({
                     style={{
                       color: reveal
                         ? player.multiplier < multiplier
-                          ? "green"
-                          : "red"
+                          ? "#326a54"
+                          : "#cf314b"
                         : "#fff",
                     }}
                   >

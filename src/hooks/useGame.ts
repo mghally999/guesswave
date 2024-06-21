@@ -25,19 +25,19 @@ const useGame = () => {
   const [allResults, setAllResults] = useState<ResultItem[]>([]);
   const [currentRound, setCurrentRound] = useState([
     { username, points, multiplier },
-    { username: "cpu0", points: 0, multiplier: 1 },
-    { username: "cpu1", points: 0, multiplier: 1 },
-    { username: "cpu2", points: 0, multiplier: 1 },
-    { username: "cpu3", points: 0, multiplier: 1 },
+    { username: "CPU 1", points: 0, multiplier: 1 },
+    { username: "CPU 2", points: 0, multiplier: 1 },
+    { username: "CPU 3", points: 0, multiplier: 1 },
+    { username: "CPU 4", points: 0, multiplier: 1 },
   ]);
 
   const handleNameSubmit = (username: string) => {
     setCurrentRound([
       { username, points, multiplier },
-      { username: "cpu0", points: 0, multiplier: 1 },
-      { username: "cpu1", points: 0, multiplier: 1 },
-      { username: "cpu2", points: 0, multiplier: 1 },
-      { username: "cpu3", points: 0, multiplier: 1 },
+      { username: "CPU 1", points: 0, multiplier: 1 },
+      { username: "CPU 2", points: 0, multiplier: 1 },
+      { username: "CPU 3", points: 0, multiplier: 1 },
+      { username: "CPU 4", points: 0, multiplier: 1 },
     ]);
     setUsername(username);
   };
@@ -58,22 +58,22 @@ const useGame = () => {
     const roundResults = [
       { username, points, multiplier },
       {
-        username: "cpu0",
+        username: "CPU 1",
         points: Math.floor(Math.random() * 24 + 1) * 25,
         multiplier: Math.floor(Math.random() * 100) / 10,
       },
       {
-        username: "cpu1",
+        username: "CPU 2",
         points: Math.floor(Math.random() * 24 + 1) * 25,
         multiplier: Math.floor(Math.random() * 100) / 10,
       },
       {
-        username: "cpu2",
+        username: "CPU 3",
         points: Math.floor(Math.random() * 24 + 1) * 25,
         multiplier: Math.floor(Math.random() * 100) / 10,
       },
       {
-        username: "cpu3",
+        username: "CPU 4",
         points: Math.floor(Math.random() * 24 + 1) * 25,
         multiplier: Math.floor(Math.random() * 100) / 10,
       },

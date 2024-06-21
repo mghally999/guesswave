@@ -18,12 +18,12 @@ const Chat = ({ username }: ChatProps) => {
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   const generateMessage = () => {
-    const cpus = ["CPU 0", "CPU 1", "CPU 2", "CPU 3"];
+    const cpus = ["CPU 1", "CPU 2", "CPU 3"];
     const msgs = [
       "Hello Everyone",
       "I can't get enough of this game",
       "I'm sorry for late, I've Just came from outside",
-      "We'll have a great game, guys",
+      "We'll have a great game guys",
     ];
 
     const selected_user = cpus[Math.floor(Math.random() * cpus.length)];
@@ -70,7 +70,7 @@ const Chat = ({ username }: ChatProps) => {
             </div>
           </div>
         ))}
-        <div ref={chatEndRef} />
+        {/* <div ref={chatEndRef} /> */}
       </div>
       <div className={styles.inputContainer}>
         <form onSubmit={handleSendMessage}>

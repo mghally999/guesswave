@@ -39,7 +39,7 @@ const GameContainer = () => {
       <div className={styles.UpperGridContainer}>
         {!username && <Welcome handleNameSubmit={handleNameSubmit} />}
         {username && (
-          <center>
+          <div className={styles.centerContent}>
             <div className={styles.row}>
               <PointsControl
                 points={points}
@@ -51,15 +51,13 @@ const GameContainer = () => {
                 setMultiplier={setMultiplier}
               />
             </div>
-            <div>
-              <button
-                className={styles.start_button}
-                onClick={handleStartClick}
-                disabled={buttonState.disabled}
-              >
-                {buttonState.text}
-              </button>
-            </div>
+            <button
+              className={styles.start_button}
+              onClick={handleStartClick}
+              disabled={buttonState.disabled}
+            >
+              {buttonState.text}
+            </button>
             <div className={styles.header}>
               <FontAwesomeIcon icon={faTrophy} className={styles.trophyIcon} />
               <h2>Current Round</h2>
@@ -71,7 +69,7 @@ const GameContainer = () => {
               reveal={revealCurrentRoundResult}
             />
             <SpeedControl speed={speed} setSpeed={setSpeed} />
-          </center>
+          </div>
         )}
         <div className={styles.topPaneRight}>
           <GameHeader username={username} points={userPoints} />

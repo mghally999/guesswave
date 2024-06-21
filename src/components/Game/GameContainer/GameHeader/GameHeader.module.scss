@@ -9,23 +9,24 @@
   .infoBox {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     margin: 10px;
-    background: linear-gradient(89deg, rgb(26 34 51) 0%, rgb(36 44 58) 99%);
+    background: linear-gradient(89deg, rgb(26, 34, 51) 0%, rgb(36, 44, 58) 99%);
     border-radius: 10px;
     padding: 10px;
     text-align: center;
     color: #fff;
 
     .icon {
-      font-size: 24px;
-      margin-bottom: 10px;
+      font-size: 28px;
       color: #f39f17;
     }
 
     span {
-      margin-left: 10px;
-      font-size: 18px;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0 auto;
     }
   }
 }
