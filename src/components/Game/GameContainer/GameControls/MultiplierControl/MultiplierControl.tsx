@@ -1,22 +1,21 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import styles from "./MultiplierControl.module.scss";
 
 interface MultiplierControlProps {
-  multiplier: any;
-  setMultiplier: (multiplier: any) => void;
+  multiplier: number;
+  setMultiplier: (multiplier: number) => void;
 }
 
-const MultiplierControl: React.FC<MultiplierControlProps> = ({
+const MultiplierControl = ({
   multiplier,
   setMultiplier,
-}) => {
+}: MultiplierControlProps) => {
   return (
     <div className={styles.control}>
       <span>Multiplier</span>
       <div className={styles.controlInner}>
-        <button onClick={() => setMultiplier((prev) => prev - 0.25)}>
+        <button onClick={() => setMultiplier(multiplier - 0.25)}>
           <FontAwesomeIcon icon={faArrowDown} />
         </button>
         <input
@@ -26,7 +25,7 @@ const MultiplierControl: React.FC<MultiplierControlProps> = ({
           onChange={(e) => setMultiplier(parseFloat(e.target.value))}
           className={styles.input}
         />
-        <button onClick={() => setMultiplier((prev) => prev + 0.25)}>
+        <button onClick={() => setMultiplier(multiplier + 0.25)}>
           <FontAwesomeIcon icon={faArrowUp} />
         </button>
       </div>

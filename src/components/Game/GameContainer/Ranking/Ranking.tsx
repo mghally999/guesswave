@@ -1,7 +1,6 @@
-import React from "react";
-import styles from "./Ranking.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartSimple } from "@fortawesome/free-solid-svg-icons";
+import styles from "./Ranking.module.scss";
 
 interface Player {
   username: string;
@@ -13,7 +12,7 @@ interface RankingProps {
   username: string;
 }
 
-const Ranking: React.FC<RankingProps> = ({ records, username }) => {
+const Ranking = ({ records, username }: RankingProps) => {
   return (
     <div className={styles.rankingContainer}>
       <div className={styles.header}>

@@ -8,6 +8,23 @@
   display: flex;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+
+  .trophyIcon {
+    margin-right: 0.5rem;
+    color: #e2ae29;
+  }
+
+  h2 {
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
 .start_button {
   background: linear-gradient(
     90deg,

@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./Chat.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMessage } from "@fortawesome/free-solid-svg-icons";
 
-interface msg {
+interface Msg {
   user: string;
   message: string;
 }
@@ -12,24 +12,23 @@ interface ChatProps {
   username: string;
 }
 
-const Chat: React.FC<ChatProps> = ({ username }) => {
-  const [chatHistory, setChatHistory] = useState<msg[]>([]);
+const Chat = ({ username }: ChatProps) => {
+  const [chatHistory, setChatHistory] = useState<Msg[]>([]);
   const [message, setMessage] = useState("");
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   const generateMessage = () => {
-    let cpus = ["CPU 0", "CPU 1", "CPU 2", "CPU 3"];
-    let msgs = [
+    const cpus = ["CPU 0", "CPU 1", "CPU 2", "CPU 3"];
+    const msgs = [
       "Hello Everyone",
       "I can't get enough of this game",
       "I'm sorry for late, I've Just came from outside",
       "We'll have a great game, guys",
     ];
 
-    let selected_user = cpus[Math.floor(Math.random() * cpus.length)];
-    let selected_msg = msgs[Math.floor(Math.random() * msgs.length)];
+    const selected_user = cpus[Math.floor(Math.random() * cpus.length)];
+    const selected_msg = msgs[Math.floor(Math.random() * msgs.length)];
     if (username) {
-      console.log("test");
       setChatHistory((msg) => [
         ...msg,
         { user: selected_user, message: selected_msg },

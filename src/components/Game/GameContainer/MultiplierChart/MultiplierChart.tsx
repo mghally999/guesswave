@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   LineChart,
   Line,
@@ -19,11 +19,11 @@ interface MultiplierChartProps {
   triggerAnimation?: boolean;
 }
 
-const MultiplierChart: React.FC<MultiplierChartProps> = ({
+const MultiplierChart = ({
   data,
   animationDuration = 2000,
   triggerAnimation = false,
-}) => {
+}: MultiplierChartProps) => {
   const [maxDataValue, setMaxDataValue] = useState(0);
 
   useEffect(() => {

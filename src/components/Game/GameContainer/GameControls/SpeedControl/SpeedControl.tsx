@@ -1,14 +1,13 @@
-import React from "react";
-import styles from "./SpeedControl.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTachometerAlt } from "@fortawesome/free-solid-svg-icons";
+import styles from "./SpeedControl.module.scss";
 
 interface SpeedControlProps {
   speed: number;
   setSpeed: (speed: number) => void;
 }
 
-const SpeedControl: React.FC<SpeedControlProps> = ({ speed, setSpeed }) => {
+const SpeedControl = ({ speed, setSpeed }: SpeedControlProps) => {
   const handleSpeedChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSpeed(parseFloat(event.target.value));
   };
