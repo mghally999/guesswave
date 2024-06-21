@@ -1,15 +1,16 @@
 @import "../../../styles/variables.scss";
 
 .container {
-  padding: 19px 100px;
+  padding: 10px 100px;
   height: 100vh;
 }
 
-.gridContainer {
+.UpperGridContainer {
   display: grid;
   grid-template-columns: 0.7fr 1.5fr;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 5px;
 }
 
 .row {
@@ -55,6 +56,11 @@
   }
 }
 
-.topPaneRight {
-  // Styles for the topPaneRight if needed
+.LowerGridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-gap: 1rem;
+  gap: 1rem;
+  width: 100%;
 }

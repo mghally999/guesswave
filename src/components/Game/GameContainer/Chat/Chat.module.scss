@@ -18,18 +18,13 @@
 }
 
 .chat {
-  padding: 0 1rem;
-  margin-bottom: 30px;
-  margin: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // width: 45vw;
   height: 320px;
-  // border-radius: 10px;
+  border-radius: 9px;
 
   .chatHistory {
-    // border-radius: 20px 0 !important;
     background: $inputDiv;
     flex-grow: 1;
     overflow-y: scroll;
@@ -68,7 +63,6 @@
     .input {
       flex-grow: 1;
       padding: 1rem;
-      width: 30vw;
       border-radius: 10px;
       border: 0;
       background-color: #181d25;

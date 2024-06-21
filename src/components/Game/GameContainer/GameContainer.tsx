@@ -36,7 +36,7 @@ const GameContainer = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.gridContainer}>
+      <div className={styles.UpperGridContainer}>
         {!username && <Welcome handleNameSubmit={handleNameSubmit} />}
         {username && (
           <center>
@@ -83,7 +83,7 @@ const GameContainer = () => {
         </div>
       </div>
 
-      <div className={styles.gridContainer}>
+      <div className={styles.LowerGridContainer}>
         <Ranking username={username} records={records} />
         <Chat username={username} />
       </div>
