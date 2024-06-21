@@ -1,17 +1,18 @@
 import React from "react";
 import styles from "./GameContainer.module.scss";
-import Welcome from "../GameContent/Welcome/Welcome";
+import Welcome from "./WelcomeRound/Welcome/Welcome";
 import PointsControl from "../GameControls/PointsControl/PointsControl";
 import MultiplierControl from "../GameControls/MultiplierControl/MultiplierControl";
-import CurrentRound from "../GameContent/CurrentRound/CurrentRound";
+import CurrentRound from "./WelcomeRound/CurrentRound/CurrentRound";
 import SpeedControl from "../GameControls/SpeedControl/SpeedControl";
-import MultiplierChart from "../GameContent/MultiplierChart/MultiplierChart";
+import MultiplierChart from "./MultiplierChart/MultiplierChart";
 import UserInfo from "../../UserInfo";
-import Chat from "../GameInfoPanel/Chat/Chat";
-import Ranking from "../GameInfoPanel/Ranking/Ranking";
+import Chat from "./Chat/Chat";
+import Ranking from "./Ranking/Ranking";
 import useGame from "../../../hooks/useGame";
+import GameHeader from "./GameHeader/GameHeader";
 
-const Game: React.FC = () => {
+const GameContainer: React.FC = () => {
   const {
     triggerAnimation,
     username,
@@ -60,6 +61,7 @@ const Game: React.FC = () => {
                 {buttonState.text}
               </button>
             </div>
+            <GameHeader />
             <CurrentRound
               currentRound={currentRound}
               username={username}
@@ -86,4 +88,4 @@ const Game: React.FC = () => {
   );
 };
 
-export default Game;
+export default GameContainer;

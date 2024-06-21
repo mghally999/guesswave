@@ -1,7 +1,4 @@
-import React from "react";
 import styles from "./CurrentRound.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 
 interface Player {
   username: string;
@@ -16,20 +13,16 @@ interface CurrentRoundProps {
   multiplier: number;
 }
 
-const CurrentRound: React.FC<CurrentRoundProps> = ({
+const CurrentRound = ({
   currentRound,
   username,
   reveal,
   multiplier,
-}) => {
+}: CurrentRoundProps) => {
   const players = currentRound as Player[];
 
   return (
     <div>
-      <div className={styles.header}>
-        <FontAwesomeIcon icon={faTrophy} className={styles.trophyIcon} />
-        <h2>Current Round</h2>
-      </div>
       {players.length === 0 ? (
         <p>No data available</p>
       ) : (

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Welcome.module.scss";
 
 interface WelcomeProps {
   handleNameSubmit: (username: string) => void;
 }
 
-const Welcome: React.FC<WelcomeProps> = ({ handleNameSubmit }) => {
+const Welcome = ({ handleNameSubmit }: WelcomeProps) => {
   const [name, setName] = useState("");
 
   const handleAccept = (e: React.FormEvent<HTMLFormElement>) => {
