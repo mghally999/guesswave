@@ -1,15 +1,19 @@
 <div align="center">
-  <img src="./public/logo-dark.png" alt="logo" width="90" height="auto">
+
   <h2>Guess Wave</h2>
+
   <h3>
-    <a href="https://guesswave.netlify.app">
+    <a href="https://guesswave.netlify.app" target="_blank">
       <strong>Demo Website</strong>
     </a>
   </h3>
+
   <div align="center">
-    <a href="https://guesswave.netlify.app">View Demo</a>
+    <a href="https://guesswave.netlify.app" target="_blank">View Demo</a>
   </div>
+
   <hr>
+
 </div>
 
 <!-- Brief -->
@@ -18,22 +22,22 @@ Guess Wave is an engaging and dynamic guessing game where players predict the po
 </p>
 
 <!-- Screenshot -->
-<a align="center"  href="https://guesswave.netlify.app">
+<a align="center" href="https://guesswave.netlify.app">
 
 ![Screenshot](./public/thumbnail-preview-1.png)
 
 ![Screenshot](./public/thumbnail-preview-2.png)
 
 </a>
-## Table of contents
+
+Table of contents
 
 - [Key Features](#key-features)
-- [My Process](#my-process)
-  - [Built With](#built-with)
+- [Built With](#built-with)
 - [Installation](#installation)
 - [Author](#author)
 
-## Key Features
+Key Features
 
 - Players can enter their username to start the game.
 - Users can place points and choose a multiplier for each round.
@@ -44,7 +48,7 @@ Guess Wave is an engaging and dynamic guessing game where players predict the po
 - Chat functionality for players to communicate during the game.
 - Adjustable game speed to control the round duration.
 
-### Built With
+Built With
 
 - Typescript
 - ReactJS
@@ -52,7 +56,7 @@ Guess Wave is an engaging and dynamic guessing game where players predict the po
 - WebSocket
 - SCSS
 
-### Installation
+Installation
 
 - Clone this repo:
 
