@@ -20,9 +20,9 @@ Guess Wave is an engaging and dynamic guessing game where players predict the po
 <!-- Screenshot -->
 <a align="center" href="https://guesswave.netlify.app">
 
-![Screenshot](./public/thumbnail-preview-1.png)
+![Screenshot](./GuessWave/public/thumbnail-preview-1.png)
 
-![Screenshot](./public/thumbnail-preview-2.png)
+![Screenshot](./GuessWave/public/thumbnail-preview-2.png)
 
 </a>
 
