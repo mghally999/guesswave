@@ -3,7 +3,8 @@
 .userInfo {
   display: flex;
   justify-content: space-between;
-  padding: 5px;
+  color: $text-color;
+  margin-bottom: 1rem;
   color: $text-color;
 
   .infoBox {
@@ -11,15 +12,18 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin: 10px;
+    height: 36px;
+    padding: 5px 10px;
+    margin: 3px;
     background: linear-gradient(89deg, rgb(26, 34, 51) 0%, rgb(36, 44, 58) 99%);
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 10px;
     text-align: center;
     color: #fff;
 
+
     .icon {
-      font-size: 28px;
+      font-size: 32px;
       color: #f39f17;
     }
 

@@ -1,21 +1,39 @@
+// CurrentRound.module.scss
 @import "../../../../../styles/variables.scss";
 
-.tableContainer {
+.currentRoundContainer {
   margin-top: 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+
+  h2 {
+    color: #fff;
+    font-size: 18px;
+    margin: 0;
+  }
+}
+
+.tableContainer {
   border-radius: 10px;
   overflow: hidden;
-  margin: 1rem;
   background-color: #1e1e1e;
+  margin-bottom: 1.3rem;
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
 
+
   th,
   td {
-    padding: 0.5rem;
-    text-align: left;
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 1rem;
   }
 
   th {
@@ -37,7 +55,7 @@
   }
 
   .username {
-    width: 60%;
+    // width: 60%;
     font-size: 1rem;
     font-weight: bold;
   }

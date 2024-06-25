@@ -1,6 +1,7 @@
 import styles from "./GameContainer.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrophy } from "@fortawesome/free-solid-svg-icons";
+import { faTachometerAlt } from "@fortawesome/free-solid-svg-icons";
 import Welcome from "./WelcomeRound/Welcome/Welcome";
 import PointsControl from "./GameControls/PointsControl/PointsControl";
 import MultiplierControl from "./GameControls/MultiplierControl/MultiplierControl";
@@ -68,10 +69,17 @@ const GameContainer = () => {
               multiplier={result}
               reveal={revealCurrentRoundResult}
             />
+            <div className={styles.header}>
+              <FontAwesomeIcon
+                icon={faTachometerAlt}
+                className={styles.speedIcon}
+              />
+              <h2>Speed</h2>
+            </div>
             <SpeedControl speed={speed} setSpeed={setSpeed} />
           </div>
         )}
-        <div className={styles.topPaneRight}>
+        <div className={styles.gameHeaderAndChart}>
           <GameHeader username={username} points={userPoints} />
           <MultiplierChart
             data={data}
@@ -80,7 +88,6 @@ const GameContainer = () => {
           />
         </div>
       </div>
-
       <div className={styles.LowerGridContainer}>
         <Ranking username={username} records={records} />
         <Chat username={username} />

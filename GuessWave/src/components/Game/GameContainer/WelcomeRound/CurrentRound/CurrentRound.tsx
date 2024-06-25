@@ -30,7 +30,7 @@ const CurrentRound = ({
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>Username</th>
+                <th>Name</th>
                 <th>Points</th>
                 <th>Multiplier</th>
               </tr>

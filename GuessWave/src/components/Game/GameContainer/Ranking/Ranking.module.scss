@@ -1,18 +1,14 @@
+// Ranking.module.scss
 @import "../../../../styles/variables.scss";
-
-// .rankingContainer {
-//   // padding: 0 1rem;
-//   // margin-bottom: 30px;
-// }
 
 .header {
   display: flex;
   align-items: center;
-  margin: 1rem 0;
+    margin: 0.5rem 0;
 
   .trophyIcon {
     margin-right: 0.5rem;
-    color: #e2ae29;
+    color: #e2ae29; // Ensure the color is set correctly
     font-size: 1.5rem;
   }
 
@@ -23,43 +19,45 @@
   }
 }
 
-// .tableContainer {
-//   margin-top: 1rem;
-//   border-radius: 10px;
-//   overflow-y: auto;
-//   background-color: #bc8585;
-// }
+.tableContainer {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #1e1e1e;
+}
 
 .table {
-  width: 51vw;
+  width: 100%;
   border-collapse: collapse;
-  border-radius: 9px;
-
-  thead {
-    background: linear-gradient(90deg, #181c23 100%, #202631 100%);
-  }
 
   th,
   td {
     padding: 0.75rem;
-    text-align: left;
+    text-align: center;
     font-size: 1rem;
   }
 
   th {
-    color: #fff;
+    background-color: #0f1417;
+    color: #f0f0f0;
+    // text-align: left; // Align left for consistency
   }
 
   .background1 {
-    background-color: #262d39;
-  }
-
-  .background2 {
     background-color: #1b222c;
   }
 
+  .background2 {
+    background-color: #262d39;
+  }
+
   .highlightRow {
-    background-color: #495063;
+    background-color: #485062;
     color: #000;
+  }
+
+  .username {
+    // width: 60%;
+    font-size: 1rem;
+    font-weight: bold;
   }
 }

@@ -14,10 +14,10 @@ const SpeedControl = ({ speed, setSpeed }: SpeedControlProps) => {
 
   return (
     <div className={styles.speedControl}>
-      <div className={styles.header}>
+      {/* <div className={styles.header}>
         <FontAwesomeIcon icon={faTachometerAlt} className={styles.speedIcon} />
         <h2>Speed Control</h2>
-      </div>
+      </div> */}
       <div className={styles.slider}>
         <input
           type="range"

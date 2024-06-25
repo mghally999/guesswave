@@ -17,10 +17,9 @@ const Welcome = ({ handleNameSubmit }: WelcomeProps) => {
     <>
       <form className={styles.welcomeCard} onSubmit={handleAccept}>
         <h1>Welcome</h1>
-        <p>Please Enter Your Name</p>
+        <p>Please Insert Your Name</p>
         <input
           type="text"
-          placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
