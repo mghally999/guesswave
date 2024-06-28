@@ -16,14 +16,19 @@ interface Player {
 interface GameContextProps {
   userName: string;
   setUserName: React.Dispatch<React.SetStateAction<string>>;
+
   currentRound: Player[];
   setCurrentRound: React.Dispatch<React.SetStateAction<Player[]>>;
+
   chatHistory: string[];
   setChatHistory: React.Dispatch<React.SetStateAction<string[]>>;
+
   points: number;
   setPoints: React.Dispatch<React.SetStateAction<number>>;
+
   multiplier: number;
   setMultiplier: React.Dispatch<React.SetStateAction<number>>;
+  
   sendMessage: (message: string) => void;
   subscribeToMessages: (callback: (message: string) => void) => () => void;
 }
@@ -34,11 +39,11 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
   const [userName, setUserName] = useState<string>("");
   const [currentRound, setCurrentRound] = useState<Player[]>([]);
   const [chatHistory, setChatHistory] = useState<string[]>([]);
-  const [points, setPoints] = useState<number>(1000); // Initial points as per requirement
+  const [points, setPoints] = useState<number>(1000);
   const [multiplier, setMultiplier] = useState<number>(1);
 
   const { sendMessage, subscribeToMessages } = useWebSocket(
-    "ws://localhost:8080"
+    "ws://http://93.127.203.64:3000"
   );
 
   useEffect(() => {
@@ -49,6 +54,7 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     return () => {
       unsubscribe();
     };
+    
   }, [subscribeToMessages]);
 
   return (

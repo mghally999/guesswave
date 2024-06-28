@@ -1,6 +1,4 @@
-export const generatePositiveGradientData = (
-  target: number
-): { value: number }[] => {
+export const generatePositiveGradientData = (target: number): { value: number }[] => {
   const data: { value: number }[] = [];
   let value = 0;
   const steps = 5;

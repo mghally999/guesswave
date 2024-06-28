@@ -19,6 +19,7 @@ const CurrentRound = ({
   reveal,
   multiplier,
 }: CurrentRoundProps) => {
+  
   const players = currentRound as Player[];
 
   return (
