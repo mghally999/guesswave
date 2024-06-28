@@ -43,7 +43,7 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
   const [multiplier, setMultiplier] = useState<number>(1);
 
   const { sendMessage, subscribeToMessages } = useWebSocket(
-    "ws://http://93.127.203.64:3000"
+    "ws://http://localhost:3000"
   );
 
   useEffect(() => {

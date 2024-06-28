@@ -24,7 +24,7 @@ const Chat = ({ username }: ChatProps) => {
   const ws = useRef<WebSocket | null>(null);
 
   useEffect(() => {
-    ws.current = new WebSocket('ws://http://93.127.203.64:3000');
+    ws.current = new WebSocket('ws://http://localhost:3000');
 
     ws.current.onopen = () => {
       console.log("Connected to WebSocket server!");
