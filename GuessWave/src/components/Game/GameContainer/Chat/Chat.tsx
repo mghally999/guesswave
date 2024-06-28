@@ -23,34 +23,34 @@ const Chat = ({ username }: ChatProps) => {
   const chatHistoryRef = useRef<HTMLDivElement>(null);
   const ws = useRef<WebSocket | null>(null);
 
-  useEffect(() => {
-    ws.current = new WebSocket('ws://http://localhost:3000');
+  // useEffect(() => {
+  //   ws.current = new WebSocket('ws://http://localhost:3000');
 
-    ws.current.onopen = () => {
-      console.log("Connected to WebSocket server!");
-    };
+  //   ws.current.onopen = () => {
+  //     console.log("Connected to WebSocket server!");
+  //   };
 
-    ws.current.onmessage = (event) => {
-      const messageData = JSON.parse(event.data);
-      console.log("Message received from server:", messageData);
+  //   ws.current.onmessage = (event) => {
+  //     const messageData = JSON.parse(event.data);
+  //     console.log("Message received from server:", messageData);
 
-      if (messageData.type === 'initial') {
-        messageData.messages.forEach((message: MsgFromServer) => {
-          appendMessage({ user: message.username, message: message.message });
-        });
-      } else if (messageData.type === 'message') {
-        appendMessage({ user: messageData.data.username, message: messageData.data.message });
-      }
-    };
+  //     if (messageData.type === 'initial') {
+  //       messageData.messages.forEach((message: MsgFromServer) => {
+  //         appendMessage({ user: message.username, message: message.message });
+  //       });
+  //     } else if (messageData.type === 'message') {
+  //       appendMessage({ user: messageData.data.username, message: messageData.data.message });
+  //     }
+  //   };
 
-    ws.current.onclose = () => {
-      console.log("Disconnected from WebSocket server");
-    };
+  //   ws.current.onclose = () => {
+  //     console.log("Disconnected from WebSocket server");
+  //   };
 
-    return () => {
-      ws.current?.close();
-    };
-  }, []);
+  //   return () => {
+  //     ws.current?.close();
+  //   };
+  // }, []);
 
   useEffect(() => {
     if (chatHistoryRef.current) {
